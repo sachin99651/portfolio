@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>To‑Do List App</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap">
+<link rel="stylesheet" href="TODO.css">
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="logo">My Portfolio</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">To‑Do App</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="todo-container">
+    <div class="todo-title">To‑Do List App</div>
+    <div class="input-group">
+      <input type="text" placeholder="Enter new task" id="taskInput">
+      <button onclick="addTask()">Add</button>
+    </div>
+    <ul id="taskList">
+      <li class="task-item">
+        <span class="task-text">Sample Task 1</span>
+        <div class="task-btns">
+          <button onclick="editTask(this)">Edit</button>
+          <button onclick="deleteTask(this)">Delete</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</main>
+
+<script src="TODO.js"></script>
+
+</body>
+</html>

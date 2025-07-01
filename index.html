@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sachin Pal | Portfolio</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" />
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"/>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Loader -->
+<div id="loader">
+  <div class="spinner"></div>
+</div>
+
+<header>
+  <div class="container">
+    <div class="logo">My Portfolio</div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="toggle-btn" aria-label="Toggle dark/light mode" onclick="toggleMode()">☀️/🌙</button>
+  </div>
+</header>
+
+<main id="home">
+  <section class="hero">
+    <div class="about-me">
+      <h1 class="typing" id="typing-name"></h1>
+      <p>
+        Passionate web developer specializing in stunning, responsive websites with HTML, CSS,
+        JavaScript and more.
+      </p>
+      <button><a href="#projects">View My Work</a></button>
+    </div>
+    <div class="prof-img">
+      <img src="Profile.png" alt="Profile" />
+    </div>
+  </section>
+
+  <section id="about">
+    <h2 class="section-title">About Me</h2>
+    <div class="about-content">
+      <p>
+        Hello! I'm Sachin Pal, creative and detail-oriented web developer focused on building
+        beautiful, functional user interfaces.
+      </p>
+      <p>Always exploring new technologies to deliver great web experiences.</p>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2 class="section-title">Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <h3>To‑Do List App</h3>
+        <p>Interactive app to track daily tasks.</p>
+        <a href="TODO.html" target="_blank" rel="noopener noreferrer">View Demo</a>
+      </div>
+      <div class="project-card">
+        <h3>Portfolio Website</h3>
+        <p>Personal portfolio showcasing skills & projects.</p>
+        <a href="#" target="_blank" rel="noopener noreferrer">View Demo</a>
+      </div>
+      <div class="project-card">
+        <h3>Weather App</h3>
+        <p>Real-time weather app built with JS & APIs.</p>
+        <a href="#" target="_blank" rel="noopener noreferrer">View Demo</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="social-icons">
+    <a href="https://linkedin.com/in/sachin-pal-94b897311" target="_blank" rel="noopener noreferrer"
+      ><i class="fab fa-linkedin"></i
+    ></a>
+    <a href="https://www.instagram.com/pal_ji95" target="_blank" rel="noopener noreferrer"
+      ><i class="fab fa-instagram"></i
+    ></a>
+    <a href="https://x.com/SachinPal99651" target="_blank" rel="noopener noreferrer"
+      ><i class="fab fa-x-twitter"></i
+    ></a>
+    <a href="https://wa.me/9594509063" target="_blank" rel="noopener noreferrer"
+      ><i class="fab fa-whatsapp"></i
+    ></a>
+  </div>
+  <p style="margin-top: 1rem;">© 2025 Sachin Pal. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
