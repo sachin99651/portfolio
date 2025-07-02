@@ -1,0 +1,49 @@
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    color: #fff;
+    min-height: 100vh;
+    display: flex; justify-content: center; align-items: center;
+    transition: background 0.4s, color 0.4s;
+  }
+  .card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border-radius: 1rem;
+    padding: 2rem;
+    width: 95%; max-width: 420px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    text-align: center;
+  }
+  h1 { font-size: 1.8rem; margin-bottom: 1rem; }
+  .search { display: flex; margin-bottom: 1rem; }
+  #city-input {
+    flex: 1;
+    padding: 0.6rem;
+    border: none;
+    border-radius: 0.5rem 0 0 0.5rem;
+    outline: none;
+  }
+  #search-btn {
+    background: #00c6ff; border: none; color: #fff;
+    padding: 0.6rem 1rem;
+    border-radius: 0 0.5rem 0.5rem 0;
+    cursor: pointer; transition: background 0.3s;
+  }
+  #search-btn:hover { background: #007acc; }
+  #mode-btn {
+    margin-bottom: 1rem;
+    padding: 0.4rem 0.8rem;
+    border: none; border-radius: 0.5rem;
+    background: rgba(0,0,0,0.3);
+    color: #fff; cursor: pointer;
+  }
+  section { margin-top: 1rem; }
+  #error { color: #ff4d4d; margin-top: 1rem; }
+  .hidden { display: none; }
+  canvas { margin-top: 1rem; }
+  @media (max-width: 500px) {
+    .search { flex-direction: column; }
+    #city-input, #search-btn { border-radius: 0.5rem; width: 100%; margin-bottom: 0.5rem; }
+  }

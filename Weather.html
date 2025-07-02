@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weather App 🌦️</title>
+<link rel="stylesheet" href="weather.css">
+</head>
+<body>
+  <div class="loader" id="loader"><div class="spinner"></div></div>
+  <header>
+    <div class="logo">My Portfolio</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Projects</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+  <main class="container">
+    <h1>Weather App 🌦️</h1>
+    <div class="search">
+      <input type="text" id="city-input" placeholder="Enter city name...">
+      <button id="search-btn">🔍</button>
+    </div>
+    <button id="mode-btn">☀️ Light Mode</button>
+    <section id="weather" class="hidden">
+      <h2 id="city-name"></h2>
+      <p id="temperature"></p>
+      <p id="description"></p>
+    </section>
+    <canvas id="tempChart" class="hidden"></canvas>
+    <p id="error" class="hidden"></p>
+  </main>
+  <footer>© 2025 My Portfolio • Email: me@example.com • Phone: +91-1234567890</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="weather.js">
+
+</script>
+</body>
+</html>
