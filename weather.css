@@ -1,49 +1,120 @@
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #4facfe, #00f2fe);
-    color: #fff;
-    min-height: 100vh;
-    display: flex; justify-content: center; align-items: center;
-    transition: background 0.4s, color 0.4s;
+/* Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+.weather-app {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* portfolio gradient */
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: background 0.4s, color 0.4s;
+}
+
+/* Loader */
+.loader {
+  position: fixed; top:0; left:0; right:0; bottom:0;
+  background: rgba(0,0,0,0.4);
+  display: flex; justify-content: center; align-items: center;
+  z-index: 9999;
+}
+.spinner {
+  border: 5px solid #3ac1e7; border-top: 5px solid transparent;
+  border-radius: 50%; width: 50px; height: 50px;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin { 0% { transform: rotate(0); } 100% { transform: rotate(360deg); } }
+
+/* Header */
+.weather-header {
+  width: 100%;
+  background: rgba(15,32,39,0.8);
+  backdrop-filter: blur(4px);
+}
+.weather-header .container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem 2rem;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.logo {
+  font-size: 1.4rem; font-weight: bold; color: #3ac1e7;
+}
+.weather-header nav a {
+  color: #fff; margin-left: 1rem; text-decoration: none; font-weight: 500;
+}
+.weather-header nav a:hover { text-decoration: underline; }
+
+/* Main content */
+.weather-container {
+  flex: 1;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 2rem;
+}
+.weather-container h1 {
+  font-size: 1.8rem; margin-bottom: 1rem;
+}
+.search {
+  display: flex; margin-bottom: 1rem; width: 100%; max-width: 400px;
+}
+#city-input {
+  flex: 1; padding: 0.6rem;
+  border: none; border-radius: 0.5rem 0 0 0.5rem; outline: none;
+}
+#search-btn {
+  background: #3ac1e7; border: none; color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 0 0.5rem 0.5rem 0;
+  cursor: pointer; transition: background 0.3s;
+}
+#search-btn:hover { background: #00cccc; }
+
+#mode-btn {
+  margin-bottom: 1rem; padding: 0.4rem 0.8rem;
+  border: none; border-radius: 0.5rem;
+  background: rgba(0,0,0,0.3); color: #fff; cursor: pointer;
+}
+
+section { margin-top: 1rem; text-align: center; }
+#error { color: #ff4d4d; margin-top: 1rem; }
+.hidden { display: none; }
+canvas { margin-top: 1rem; max-width: 100%; }
+
+/* Footer */
+.weather-footer {
+  width: 100%;
+  background: rgba(15,32,39,0.8);
+  padding: 1.5rem 0;
+  color: #fff;
+}
+.weather-footer .container {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+.footer-content a {
+  color: #a8d8ff; text-decoration: none; margin: 0 0.3rem;
+}
+.footer-content a:hover { text-decoration: underline; }
+
+.social-icons {
+  margin-top: 0.5rem;
+}
+.social-icons a {
+  color: #cce7ff;
+  font-size: 1.4rem;
+  margin: 0 0.4rem;
+  transition: color 0.3s, transform 0.2s;
+}
+.social-icons a:hover {
+  color: #00ffff;
+  transform: scale(1.2);
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .search { flex-direction: column; }
+  #city-input, #search-btn {
+    width: 100%; border-radius: 0.5rem; margin-bottom: 0.5rem;
   }
-  .card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(12px);
-    border-radius: 1rem;
-    padding: 2rem;
-    width: 95%; max-width: 420px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
-    text-align: center;
-  }
-  h1 { font-size: 1.8rem; margin-bottom: 1rem; }
-  .search { display: flex; margin-bottom: 1rem; }
-  #city-input {
-    flex: 1;
-    padding: 0.6rem;
-    border: none;
-    border-radius: 0.5rem 0 0 0.5rem;
-    outline: none;
-  }
-  #search-btn {
-    background: #00c6ff; border: none; color: #fff;
-    padding: 0.6rem 1rem;
-    border-radius: 0 0.5rem 0.5rem 0;
-    cursor: pointer; transition: background 0.3s;
-  }
-  #search-btn:hover { background: #007acc; }
-  #mode-btn {
-    margin-bottom: 1rem;
-    padding: 0.4rem 0.8rem;
-    border: none; border-radius: 0.5rem;
-    background: rgba(0,0,0,0.3);
-    color: #fff; cursor: pointer;
-  }
-  section { margin-top: 1rem; }
-  #error { color: #ff4d4d; margin-top: 1rem; }
-  .hidden { display: none; }
-  canvas { margin-top: 1rem; }
-  @media (max-width: 500px) {
-    .search { flex-direction: column; }
-    #city-input, #search-btn { border-radius: 0.5rem; width: 100%; margin-bottom: 0.5rem; }
-  }
+}

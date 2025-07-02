@@ -7,16 +7,21 @@
 <link rel="stylesheet" href="weather.css">
 </head>
 <body>
+<div class="weather-app">
   <div class="loader" id="loader"><div class="spinner"></div></div>
-  <header>
-    <div class="logo">My Portfolio</div>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Projects</a>
-      <a href="#">Contact</a>
-    </nav>
+
+  <header class="weather-header">
+    <div class="container">
+      <div class="logo">My Portfolio</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="#">Projects</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
   </header>
-  <main class="container">
+
+  <main class="weather-container">
     <h1>Weather App 🌦️</h1>
     <div class="search">
       <input type="text" id="city-input" placeholder="Enter city name...">
@@ -31,11 +36,21 @@
     <canvas id="tempChart" class="hidden"></canvas>
     <p id="error" class="hidden"></p>
   </main>
-  <footer>© 2025 My Portfolio • Email: me@example.com • Phone: +91-1234567890</footer>
+
+  <footer class="weather-footer">
+    <div class="container footer-content">
+      <p>© 2025 Sachin Pal. All rights reserved. | Email: me@example.com | Phone: +91-1234567890</p>
+      <div class="social-icons">
+        <a href="https://linkedin.com/in/sachin-pal-94b897311" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/pal_ji95" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://x.com/SachinPal99651" target="_blank"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://wa.me/9594509063" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </footer>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="weather.js">
-
-</script>
+<script src="weather.js"></script>
 </body>
 </html>
